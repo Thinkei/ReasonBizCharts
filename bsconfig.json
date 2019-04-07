@@ -1,0 +1,30 @@
+{
+  "name": "reason-biz-charts",
+  "reason": {
+    "react-jsx": 2
+  },
+  "version": "0.1.0",
+  "sources": [
+    {
+      "dir": "examples",
+      "type": "dev"
+    },
+    {
+      "dir" : "src",
+      "subdirs" : true
+    }
+  ],
+  "package-specs": {
+    "module": "commonjs",
+    "in-source": true
+  },
+  "suffix": ".bs.js",
+  "bs-dependencies": [
+    "reason-react",
+    "@glennsl/bs-json"
+  ],
+  "warnings": {
+    "error": "+5+8"
+  },
+  "refmt": 3
+}

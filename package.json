@@ -4,7 +4,12 @@
   "description": "Reasonml binding for BizCharts",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-examples": "parcel build ./examples/index.html",
+    "run-examples": "parcel ./examples/index.html",
+    "clean": "bsb -clean-world",
+    "build": "bsb -make-world",
+    "watch": "bsb -make-world -w"
   },
   "repository": {
     "type": "git",
@@ -13,12 +18,23 @@
   "keywords": [
     "chart",
     "data-visualization",
-    "reasonml"
+    "reasonml",
+    "bucklescript"
   ],
   "author": "Tien Le",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/Thinkei/ReasonBizCharts/issues"
   },
-  "homepage": "https://github.com/Thinkei/ReasonBizCharts#readme"
+  "homepage": "https://github.com/Thinkei/ReasonBizCharts#readme",
+  "dependencies": {
+    "bizcharts": "^3.5.2"
+  },
+  "devDependencies": {
+    "@glennsl/bs-json": "^3.0.0",
+    "bs-platform": "^5.0.0",
+    "bsb-js": "^1.1.7",
+    "parcel-bundler": "^1.12.3",
+    "reason-react": "^0.6.0"
+  }
 }
