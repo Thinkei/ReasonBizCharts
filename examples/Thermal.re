@@ -55,7 +55,7 @@ let make = _children => {
   ...component,
   render: _self =>
     <div>
-      <Chart renderer=`canvas data scale >
+      <Chart renderer=`canvas data scale height=500>
         <Axis name="name" />
         <Axis name="day" />
         <Tooltip />
