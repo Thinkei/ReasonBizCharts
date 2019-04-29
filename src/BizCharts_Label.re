@@ -1,5 +1,3 @@
-[@bs.module "bizcharts"] external reactClass: ReasonReact.reactClass = "Label";
-
 module ContentProp = {
   type t;
 
@@ -14,8 +12,8 @@ module ContentProp = {
   external array: array(Arg.t) => t = "%identity";
 };
 
-[@bs.obj]
-external makeProps:
+[@bs.module "bizcharts"] [@react.component]
+external make:
   (
     ~content: ContentProp.t=?,
     ~labelLine: Js.t('a)=?,
@@ -24,34 +22,7 @@ external makeProps:
     ~autoRotate: bool=?,
     ~formatter: 'c => 'd=?,
     ~htmlTemplate: 'e => 'f=?,
-    unit
+    ~children: React.element=?
   ) =>
-  _ =
-  "";
-
-let make =
-    (
-      ~content=?,
-      ~labelLine=?,
-      ~offset=?,
-      ~textStyle=?,
-      ~autoRotate=?,
-      ~formatter=?,
-      ~htmlTemplate=?,
-      children,
-    ) =>
-  ReasonReact.wrapJsForReason(
-    ~reactClass,
-    ~props=
-      makeProps(
-        ~content?,
-        ~labelLine?,
-        ~offset?,
-        ~textStyle?,
-        ~autoRotate?,
-        ~formatter?,
-        ~htmlTemplate?,
-        (),
-      ),
-    children,
-  );
+  React.element =
+  "Label";
