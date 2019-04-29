@@ -49,19 +49,16 @@ let color =
     array([|Arg.string("sales"), Arg.string("#BAE7FF-#1890FF-#0050B3")|])
   );
 
-let component = ReasonReact.statelessComponent("ColorBlockDiagram");
-
-let make = _children => {
-  ...component,
-  render: _self =>
-    <div>
-      <Chart renderer=`canvas data scale height=500>
-        <Axis name="name" />
-        <Axis name="day" />
-        <Tooltip />
-        <Geom _type=`polygon position="name*day" color>
-          <Label content={Label.ContentProp.string("sales")} />
-        </Geom>
-      </Chart>
-    </div>,
+[@react.component]
+let make = () => {
+  <div>
+    <Chart renderer=`canvas data scale height=500>
+      <Axis name="name" />
+      <Axis name="day" />
+      <Tooltip />
+      <Geom _type=`polygon position="name*day" color>
+        <Label content={Label.ContentProp.string("sales")} />
+      </Geom>
+    </Chart>
+  </div>;
 };

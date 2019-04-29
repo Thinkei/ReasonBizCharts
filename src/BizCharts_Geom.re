@@ -1,5 +1,3 @@
-[@bs.module "bizcharts"] external reactClass: ReasonReact.reactClass = "Geom";
-
 [@bs.deriving jsConverter]
 type geoType = [
   | `point
@@ -37,28 +35,26 @@ module ColorProp = {
   external array: array(Arg.t) => t = "%identity";
 };
 
-[@bs.obj]
-external makeProps:
-  (
-    ~_type: string=?,
-    ~adjust: Js.t('a)=?,
-    ~position: string=?,
-    ~color: ColorProp.t=?,
-    unit
-  ) =>
-  _ =
-  "";
+module External = {
+  [@bs.module "bizcharts"] [@react.component]
+  external make:
+    (
+      ~_type: string=?,
+      ~adjust: Js.t('a)=?,
+      ~position: string=?,
+      ~color: ColorProp.t=?,
+      ~children: React.element=?
+    ) =>
+    React.element =
+    "Geom";
+};
 
-let make = (~_type=?, ~adjust=?, ~position=?, ~color=?, children) =>
-  ReasonReact.wrapJsForReason(
-    ~reactClass,
-    ~props=
-      makeProps(
-        ~_type=?Belt.Option.map(_type, geoTypeToJs),
-        ~adjust?,
-        ~position?,
-        ~color?,
-        (),
-      ),
-    children,
-  );
+[@react.component]
+let make = (~_type, ~adjust=?, ~position=?, ~color=?, ~children=?) =>
+  <External
+    _type={geoTypeToJs(_type)}
+    ?adjust
+    ?color
+    ?position
+    ?children
+  />;

@@ -1,7 +1,7 @@
 {
   "name": "reason-biz-charts",
   "reason": {
-    "react-jsx": 2
+    "react-jsx": 3
   },
   "version": "0.1.0",
   "sources": [
