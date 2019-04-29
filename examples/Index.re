@@ -1,6 +1,6 @@
 module App = {
-  let component = ReasonReact.statelessComponent("app");
-  let make = _children => {...component, render: _self => <Thermal />};
+  [@react.component]
+  let make = () => <Thermal />;
 };
 
 ReactDOMRe.renderToElementWithId(<App />, "root");

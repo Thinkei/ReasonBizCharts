@@ -32,9 +32,9 @@
   },
   "devDependencies": {
     "@glennsl/bs-json": "^3.0.0",
-    "bs-platform": "^5.0.0",
+    "bs-platform": "^5.0.3",
     "bsb-js": "^1.1.7",
     "parcel-bundler": "^1.12.3",
-    "reason-react": "^0.6.0"
+    "reason-react": "^0.7.0"
   }
 }
