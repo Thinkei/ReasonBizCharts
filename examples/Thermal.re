@@ -52,11 +52,11 @@ let color =
 [@react.component]
 let make = () => {
   <div>
-    <Chart renderer="canvas" data scale height=500>
+    <Chart renderer=`canvas data scale height=500>
       <Axis name="name" />
       <Axis name="day" />
       <Tooltip />
-      <Geom _type="polygon" position="name*day" color>
+      <Geom _type=`polygon position="name*day" color>
         <Label content={Label.ContentProp.string("sales")} />
       </Geom>
     </Chart>
